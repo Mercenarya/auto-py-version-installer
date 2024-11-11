@@ -35,8 +35,8 @@ jobs:
     #     ls -R
 
 
-    - name: run app
-      run: |
-        python app.py
+    # - name: run app
+    #   run: |
+    #     python app.py
 
       
