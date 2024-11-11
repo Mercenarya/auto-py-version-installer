@@ -1,0 +1,32 @@
+name: App build
+on:
+  push:
+    - main
+    - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # - name: Checkout code
+    #   version: actions/checkout@v4
+
+    - name: Setup python
+      version: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    - name: install dependencies
+      run: |
+        pip install -r requirements.txt
+
+
+    - name: run app
+      run: |
+        python app.py
+
+      
