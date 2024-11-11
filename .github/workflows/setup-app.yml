@@ -34,6 +34,6 @@ jobs:
 
     - name: run app
       run: |
-        python app.py
+        python auto-py-version-installer/app.py
 
       
