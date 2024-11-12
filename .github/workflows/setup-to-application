@@ -1,0 +1,28 @@
+name: appliaction build
+on:
+  push:
+    branches:
+      - main
+      - master
+    pull_request:
+      branches:
+      - main
+      - master
+
+env:
+  PYTHON_VERSION: '3.13.0'
+
+jobs:
+  build:
+    run-ons: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-versions: ${{ env.PYTHON_VERSION }}
+      - name: install dependencies
+        run: |
+          pip install requirements.txt
+          if-no-files-found: error
