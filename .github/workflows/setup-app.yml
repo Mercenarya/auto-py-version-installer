@@ -31,10 +31,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install requests
-    # - name: Debug
-    #   run: |
-    #     pwd
-    #     ls -R
+    - name: package exe
+      run: |
+        auto-py-to-exe
 
 
     # - name: run app
